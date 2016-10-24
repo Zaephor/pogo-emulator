@@ -10,6 +10,7 @@
 - [ ] PTC User authentication/login `Could probably emulate the SSO server as well...`
 - [x] Create/Edit player avatar(tutorial + afterwards)
 - [x] Create/Change playername
+- [x] Asset Hosting w/ 2 minute expiration
 - [ ] Pokemon generator
     - [ ] Import game_master
     - [ ] Build pokemon profiles using game_master data
