@@ -73,7 +73,9 @@ Below are steps I use for connecting/testing/etc. Remember this is an unofficial
 
 ## Developers Notes
 I know my free time to work on this will vary so I welcome most pull requests.
+
 Currently this runs off of a memory/file based DB, but can easily be configured and connected to MongoDB, MariaDB, or anything else supported by [Loopback](http://loopback.io).
+
 - Application
     - `app.js` <-- Core application file, mostly just contains middleware and routes mappings
     - `/config` <-- All necessary config files(Except for some DB specific stuff at the moment)
