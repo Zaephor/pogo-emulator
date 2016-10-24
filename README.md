@@ -97,9 +97,9 @@ Currently this runs off of a memory/file based DB, but can easily be configured 
     
 ## Credits/Thanks
 - @[rastapasta](https://github.com/rastapasta) for 
-        - [Pokemon Go Xposed](https://github.com/rastapasta/pokemon-go-xposed)
-        - [pokemon-go-mitm](https://github.com/rastapasta/pokemon-go-mitm)(Used to understand MITM module)
-        - [pokemon-go-protobuf-node](https://github.com/rastapasta/pokemon-go-protobuf-node)(Got tired of ProtobufJS)
+    - [Pokemon Go Xposed](https://github.com/rastapasta/pokemon-go-xposed)
+    - [pokemon-go-mitm](https://github.com/rastapasta/pokemon-go-mitm)(Used to understand MITM module)
+    - [pokemon-go-protobuf-node](https://github.com/rastapasta/pokemon-go-protobuf-node)(Got tired of ProtobufJS)
 - @[maierfelix](https://github.com/maierfelix) for [POGOserver](https://github.com/maierfelix/POGOserver)(Reminded me I should share my experiments with others)
 - @[AeonLucid](https://github.com/AeonLucid) for [POGOProtos](https://github.com/AeonLucid/POGOProtos)
 
