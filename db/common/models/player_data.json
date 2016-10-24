@@ -1,0 +1,45 @@
+{
+  "name": "player_data",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "creation_timestamp_ms": {"type":"number"},
+    "username": {"type":"string","index": true,"default":""},
+    "team": {"type":"number","default":0},
+    "tutorial_state": [{"type":"string"}],
+    "avatar": {
+      "skin": {"type":"number","default":0},
+      "hair": {"type":"number","default":0},
+      "shirt": {"type":"number","default":0},
+      "pants": {"type":"number","default":0},
+      "hat": {"type":"number","default":0},
+      "shoes": {"type":"number","default":0},
+      "gender": {"type":"string","default":"MALE"},
+      "eyes": {"type":"number","default":0},
+      "backpack": {"type":"number","default":0}
+    },
+    "max_pokemon_storage": {"type":"number","default":250},
+    "max_item_storage": {"type":"number","default":350},
+    "daily_bonus": {"type":"object"},
+    "equipped_badge": {"type":"object"},
+    "contact_settings": {
+      "send_marketing_emails": {"type":"boolean","default":false},
+      "send_push_notifications": {"type":"boolean","default":false}
+    },
+    "currencies": [{"type":"object"}],
+    "remaining_codename_claims": {"type":"number","default":2},
+    "buddy_pokemon": {"type":"object"}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

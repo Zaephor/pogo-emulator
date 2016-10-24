@@ -1,0 +1,20 @@
+{
+  "name": "player_camera",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "is_default_camera": {"type":"boolean","default":false}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

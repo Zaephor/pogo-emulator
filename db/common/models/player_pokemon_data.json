@@ -1,0 +1,50 @@
+{
+  "name": "player_pokemon_data",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": "number",
+    "pokemon_id ": {"type":"string"},
+    "cp":{"type":"number"},
+    "stamina": {"type":"number"},
+    "stamina_max": {"type":"number"},
+    "move_1": "",
+    "move_2": "",
+    "deployed_fort_id": {"type":"string"},
+    "owner_name": {"type":"string"},
+    "is_egg": {"type":"boolean"},
+    "egg_km_walked_target": {"type":"number"},
+    "egg_km_walked_start": {"type":"number"},
+    "origin": {"type":"number"},
+    "float height_m": {"type":"number"},
+    "float weight_kg": {"type":"number"},
+    "individual_attack": {"type":"number"},
+    "individual_defense": {"type":"number"},
+    "individual_stamina": {"type":"number"},
+    "float cp_multiplier": {"type":"number"},
+    "pokeball": {"type":"number"},
+    "captured_cell_id": {"type":"number"},
+    "battles_attacked": {"type":"number"},
+    "battles_defended": {"type":"number"},
+    "egg_incubator_id": {"type":"string"},
+    "creation_time_ms": {"type":"number", "index":true},
+    "num_upgrades": {"type":"number"},
+    "additional_cp_multiplier": {"type":"number"},
+    "favorite": {"type":"number"},
+    "nickname": {"type":"string"},
+    "from_fort": {"type":"number"},
+    "buddy_candy_awarded": {"type":"number"}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

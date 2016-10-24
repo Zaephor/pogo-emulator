@@ -1,0 +1,142 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('pogo-emulator:server');
+var http = require('http');
+var Proxy = require('http-mitm-proxy');
+var proxy = new Proxy();
+
+/**
+ * Load some proxy middleware
+ */
+proxy.use(Proxy.gunzip);
+proxy.use(Proxy.wildcard);
+
+/* Proxy error handler */
+proxy.onError(function (ctx, err, errorKind) {
+    // ctx may be null
+    if (errorKind !== "PROXY_TO_SERVER_REQUEST_ERROR") {
+        var url = (ctx && ctx.clientToProxyRequest) ? ctx.clientToProxyRequest.url : '';
+        console.log(errorKind + ' on ' + url + ':' + err);
+    }
+});
+
+/* IP<->Domain Translation */
+proxy.onConnect(function (req, socket, head, callback) {
+    var ip;
+    if (!req.url.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:443/)) {
+        return callback();
+    }
+    ip = req.url.split(/:/)[0];
+    if (app.dns.ips[ip]) {
+        req.url = app.dns.ips[ip].domain + ':443';
+    }
+    return callback();
+});
+
+/* Request handler */
+proxy.onRequest(function (reqCtx, reqCB) {
+    var chunks = [];
+    reqCtx.onRequestData(function (ctx, chunk, callback) {
+        if (app.dns.domains[ctx.clientToProxyRequest.headers.host]) {
+            chunks.push(chunk);
+        } else {
+            callback();
+        }
+    });
+    reqCtx.onRequestEnd(function (ctx, callback) {
+        if (app.dns.domains[ctx.clientToProxyRequest.headers.host]) {
+            var buffer = Buffer.concat(chunks);
+            ctx.clientToProxyRequest.rawBody = buffer;
+            ctx.clientToProxyRequest.viaProxy = true;
+            app.handle(ctx.clientToProxyRequest, ctx.proxyToClientResponse);
+        } else {
+            callback();
+        }
+    });
+    return reqCB(); //? Can't recall if i was supposed to disable this
+});
+/**
+ * Get port from environment and store in Express.
+ */
+var webPort = normalizePort(process.env.PORT || app.config.server.web.port);
+app.set('port', webPort);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(webPort);
+proxy.listen(app.config.server.proxy);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof webPort === 'string'
+        ? 'Pipe ' + webPort
+        : 'Port ' + webPort;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    var addr = server.address();
+    var bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+}

@@ -1,0 +1,20 @@
+{
+  "name": "player_currency",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gems": {"type":"number","default":0}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

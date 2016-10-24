@@ -1,0 +1,9 @@
+assets/*
+config/pogo.js
+config/server.js
+config/download.js
+node_modules/*
+.idea/*
+npm_debug.log
+file.json
+ssl/*

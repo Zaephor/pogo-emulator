@@ -1,0 +1,30 @@
+{
+  "name": "s2cell",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cell_id": {
+      "type": "number",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "forts": {"type": "hasMany", "model": "s2cell_forts"},
+    "spawns": {"type": "hasMany", "model": "s2cell_spawns"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true
+    }
+  }
+}

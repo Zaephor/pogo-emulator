@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../../node_modules/loopback-ds-timestamp-mixin"
+    ]
+  },
+  "player": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_data": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_pokemon_data": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_item": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_pokedex_entry": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_stats": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_currency": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_camera": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_inventory_upgrades": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_applied_items": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_egg_incubators": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_candy": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "player_captcha": {
+    "dataSource": "dbfile",
+    "public": true
+  },
+  "item_template": {
+    "dataSource": "dbfile",
+    "public": true
+  }
+}

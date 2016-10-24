@@ -1,0 +1,21 @@
+{
+  "name": "player_captcha",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "url":{"type":"string"},
+    "token":{"type":"string"}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "s2cell_forts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "last_modified_timestamp_ms": {"type":"number"},
+    "latitude": {"type":"number"},
+    "longitude": {"type":"number"},
+    "enabled": "boolean",
+    "type": "string",
+    "owned_by_team": "string",
+    "guard_pokemon_id": "number",
+    "guard_pokemon_cp": "number",
+    "gym_points": "number",
+    "is_in_battle": "boolean",
+    "active_fort_modifier": [],
+    "lure_info": {
+      "fort_id":"string",
+      "encounter_id": {"type":"number"},
+      "active_pokemon_id":{"type":"number"},
+      "lure_expires_timestamp_ms": {"type":"number"}
+    },
+    "cooldown_complete_timestamp_ms": "number",
+    "sponsor": {"type":"number","default":0},
+    "rendering_type": {"type":"number"}
+  },
+  "validations": [],
+  "relations": {
+    "s2cell": {"type": "belongsTo", "model": "s2cell"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "player_inventory_upgrades",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "creation_timestamp_ms": {"type":"number"}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {}
+}

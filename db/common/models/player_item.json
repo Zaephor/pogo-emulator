@@ -1,0 +1,22 @@
+{
+  "name": "player_item",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "item_id": {"type":"number"},
+    "count": {"type":"number"},
+    "unseen": {"type":"boolean"}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

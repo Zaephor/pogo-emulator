@@ -1,0 +1,23 @@
+{
+  "name": "s2cell_spawns",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "coordinates":{
+      "latitude": {"type":"number"},
+      "longitude": {"type":"number"}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "s2cell": {"type": "belongsTo", "model": "s2cell"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "player_stats",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "level":{"type":"number","default":1},
+    "experience":{"type":"number","default":0},
+    "prev_level_xp":{"type":"number","default":0},
+    "next_level_xp":{"type":"number","default":0},
+    "km_walked":{"type":"number","default":0},
+    "pokemons_encountered":{"type":"number","default":0},
+    "unique_pokedex_entries":{"type":"number","default":0},
+    "pokemons_captured":{"type":"number","default":0},
+    "evolutions":{"type":"number","default":0},
+    "poke_stop_visits":{"type":"number","default":0},
+    "pokeballs_thrown":{"type":"number","default":0},
+    "eggs_hatched":{"type":"number","default":0},
+    "big_magikarp_caught":{"type":"number","default":0},
+    "battle_attack_won":{"type":"number","default":0},
+    "battle_attack_total":{"type":"number","default":0},
+    "battle_defended_won":{"type":"number","default":0},
+    "battle_training_won":{"type":"number","default":0},
+    "battle_training_total":{"type":"number","default":0},
+    "prestige_raised_total":{"type":"number","default":0},
+    "prestige_dropped_total":{"type":"number","default":0},
+    "pokemon_deployed":{"type":"number","default":0},
+    "pokemon_caught_by_type":[{"type":"number"}],
+    "small_rattata_caught":{"type":"number","default":0}
+  },
+  "validations": [],
+  "relations": {
+    "player": {"type": "belongsTo", "model": "player", "foreignKey": ""}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": true
+  }
+}

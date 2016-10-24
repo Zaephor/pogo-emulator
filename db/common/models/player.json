@@ -1,0 +1,50 @@
+{
+  "name": "player",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "location": {
+      "latitude": "number",
+      "longitude": "number",
+      "accuracy": "number",
+      "s2cell": "number"
+    },
+    "client": {
+      "version": "string",
+      "platform": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "player_data": {"type": "hasOne", "model": "player_data"},
+    "player_pokemon_data": {"type": "hasMany", "model": "player_pokemon_data"},
+    "player_item": {"type": "hasMany", "model": "player_item"},
+    "player_pokedex_entry": {"type": "hasMany", "model": "player_pokedex_entry"},
+    "player_stats": {"type": "hasOne", "model": "player_stats"},
+    "player_currency": {"type": "hasOne", "model": "player_currency"},
+    "player_camera": {"type": "hasOne", "model": "player_camera"},
+    "player_inventory_upgrades": {"type": "hasMany", "model": "player_inventory_upgrades"},
+    "player_applied_items": {"type": "hasMany", "model": "player_applied_items"},
+    "player_egg_incubators": {"type": "hasMany", "model": "player_egg_incubators"},
+    "player_candy": {"type": "hasMany", "model": "player_candy"},
+    "player_captcha": {"type": "hasMany", "model": "player_captcha"}
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true
+    }
+  }
+}

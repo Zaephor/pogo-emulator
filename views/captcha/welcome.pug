@@ -1,0 +1,11 @@
+script.
+    function captchaResponse(str) {
+        window.location.href = "unity:".concat(str);
+    }
+h3 pogo-emulator Welcome
+p You are not currently connected to a legit Niantic Server, this is an emulated server for educational purposes. There are bugs, and incomplete activities...
+p Please be aware you are transmitting GPS coordinates to this server, if you do not trust the host with your personal information, you really shouldn't have gotten this far.
+p This warning shouldn't popup too often... I hope?
+p The pogo-emulator menu will be accessible by toggling "Send Pokemon GO-related events..." in the settings page
+p
+    a(onclick="captchaResponse('exit')" href="#") Continue

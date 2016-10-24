@@ -1,0 +1,37 @@
+{
+  "name": "item_template",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "template_id": {"type":"string"},
+    "pokemon_settings": {"type":"object"},
+    "item_settings": {"type":"object"},
+    "move_settings": {"type":"object"},
+    "move_sequence_settings": {"type":"object"},
+    "type_effective": {"type":"object"},
+    "badge_settings": {"type":"object"},
+    "camera": {"type":"object"},
+    "player_level": {"type":"object"},
+    "gym_level": {"type":"object"},
+    "battle_settings": {"type":"object"},
+    "encounter_settings": {"type":"object"},
+    "iap_item_display": {"type":"object"},
+    "iap_settings": {"type":"object"},
+    "pokemon_upgrades": {"type":"object"},
+    "equipped_badges": {"type":"object"}
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true
+    }
+  }
+}

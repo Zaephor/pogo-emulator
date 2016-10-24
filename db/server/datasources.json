@@ -1,0 +1,21 @@
+{
+  "dbmemory": {
+    "name": "dbmemory",
+    "connector": "memory",
+    "file": "memory.json"
+  },
+  "dbfile": {
+    "name": "dbfile",
+    "connector": "memory",
+    "file": "file.json"
+  },
+  "mongoDB": {
+    "name": "mongoDB",
+    "host": "localhost",
+    "port": 27017,
+    "database": "nia-server",
+    "username": "",
+    "password": "",
+    "connector": "mongodb"
+  }
+}
