@@ -1,6 +1,8 @@
 ## Progress
+
 #### Supported/tested [versions](http://pokemon-go.en.uptodown.com/android/old):
 - [x] `0.35.0`
+
 #### Features/progress/todo
 - [ ] Environment variable config support
 - [x] MITM Proxy
@@ -31,6 +33,7 @@
     - [ ] Simplify configuring `Loopback` for `MongoDB`, `Redis` and `MariaDB`
 - [ ] Other
     - [ ] Could easily add support for the PokemonGoMap frontend to interface directly with the server's database, or some other Map frontend
+
 ## Getting started
 Below are steps I use for connecting/testing/etc. Remember this is an unofficial server, so we don't care about SafetyNet
 
@@ -67,6 +70,7 @@ Below are steps I use for connecting/testing/etc. Remember this is an unofficial
         1. If needed, the CA cert file can be downloaded on the device at `http://<SERVERIP>:<PORT>/proxy/ca.(pem|crt|der|etc)`
             - This [guide](http://wiki.pcprobleemloos.nl/android/cacert) walks through adding the `ca.pem` file as a system cred to remove needing a lockscreen pin
             - I also lazily use [Root Certificate Manager(ROOT)](https://play.google.com/store/apps/details?id=net.jolivier.cert.Importer)
+
 ## Developers Notes
 I know my free time to work on this will vary so I welcome most pull requests.
 Currently this runs off of a memory/file based DB, but can easily be configured and connected to MongoDB, MariaDB, or anything else supported by [Loopback](http://loopback.io).
@@ -93,6 +97,7 @@ Currently this runs off of a memory/file based DB, but can easily be configured 
         - [pokemon-go-protobuf-node](https://github.com/rastapasta/pokemon-go-protobuf-node)(Got tired of ProtobufJS)
 - @[maierfelix](https://github.com/maierfelix) for [POGOserver](https://github.com/maierfelix/POGOserver)(Reminded me I should share my experiments with others)
 - @[AeonLucid](https://github.com/AeonLucid) for [POGOProtos](https://github.com/AeonLucid/POGOProtos)
+
 ## Disclaimer
 ©2016 Niantic, Inc. ©2016 Pokémon. ©1995–2016 Nintendo / Creatures Inc. / GAME FREAK inc. © 2016 Pokémon/Nintendo Pokémon and Pokémon character names are trademarks of Nintendo. The Google Maps Pin is a trademark of Google Inc. and the trade dress in the product design is a trademark of Google Inc. under license to The Pokémon Company. Other trademarks are the property of their respective owners.
 [Privacy Policy](http://www.pokemon.com/us/privacy-policy/)
