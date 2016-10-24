@@ -71,6 +71,9 @@ Below are steps I use for connecting/testing/etc. Remember this is an unofficial
             - This [guide](http://wiki.pcprobleemloos.nl/android/cacert) walks through adding the `ca.pem` file as a system cred to remove needing a lockscreen pin
             - I also lazily use [Root Certificate Manager(ROOT)](https://play.google.com/store/apps/details?id=net.jolivier.cert.Importer)
 
+## Known glitchs
+- After completing the tutorial, the capture rewards pop-up get stuck on screen. This begun as soon as I started experimenting with Pokemon Inventory it's database
+
 ## Developers Notes
 I know my free time to work on this will vary so I welcome most pull requests.
 
